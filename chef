@@ -1,0 +1,16 @@
+vagrant up
+vagrant ssh
+cd chef-repo
+chef generate cookbook cookbooks/sac
+vim cookbooks/sac/recipes/default.rb
+execute "install" do
+	command "sudo wget http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.40/src/apache-tomcat-8.5.40-src.zip && unzip apache-tomcat-8.5.40-src.zip"
+ 	cwd "~/"
+	action :run
+end
+kinfe cookbook upload sac
+
+//node
+kinfe bootstrap IP -x vagrant -P vagrant --sudo -N my-name
+sudo chef-client
+
