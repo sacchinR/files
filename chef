@@ -14,3 +14,9 @@ kinfe cookbook upload sac
 kinfe bootstrap IP -x vagrant -P vagrant --sudo -N my-name
 sudo chef-client
 
+
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
